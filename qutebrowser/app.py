@@ -212,6 +212,7 @@ def _process_args(args):
     if not session_manager.did_load:
         log.init.debug("Initializing main window...")
         window = mainwindow.MainWindow(private=None)
+        window.setWindowFlags(Qt.CustomizeWindowHint)
         if not args.nowindow:
             window.show()
         qApp.setActiveWindow(window)
