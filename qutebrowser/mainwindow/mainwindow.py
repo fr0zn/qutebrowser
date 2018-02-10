@@ -231,6 +231,7 @@ class MainWindow(QWidget):
         config.instance.changed.connect(self._on_config_changed)
 
         objreg.get("app").new_window.emit(self)
+        self.setWindowFlags(Qt.CustomizeWindowHint)
 
     def _init_geometry(self, geometry):
         """Initialize the window geometry or load it from disk."""
